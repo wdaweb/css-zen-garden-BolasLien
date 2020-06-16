@@ -1,0 +1,401 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: monospace, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* globle style */
+body {
+  background: linear-gradient(to right top, rgb(0, 45, 80), rgb(0, 10, 40) 30%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* 每個區塊的大小初始化 */
+#zen-intro,
+#zen-supporting,
+#sidebar {
+  width: 100%;
+  height: 100vh;
+  /* position: absolute; */
+}
+
+/* top控制視窗位置 */
+#page-wrapper {
+  position: absolute;
+  top: 0%;
+  transition: 3s;
+}
+
+/* zen-intro區塊 */
+#zen-intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* banner區塊 */
+#banner {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+/* 畫一個圓 */
+#banner h1::before {
+  content: "";
+  border: 5px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1rem #fff inset, 0px 0px 1rem #fff;
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 15px auto;
+}
+
+/* zen-summary區塊 */
+#zen-summary {
+  margin: 10px;
+  padding: 10px;
+  font-size: 0.8rem;
+  width: 80%;
+  transition: 0.5s;
+  position: relative;
+  text-align: center;
+}
+
+/* 邊框 */
+#zen-summary::before,
+#zen-summary::after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  display: block;
+  position: absolute;
+  transition: 0.5s;
+}
+
+#zen-summary::before {
+  border-top: 1px solid #666;
+  border-left: 1px solid #666;
+  top: -20px;
+  left: -50px;
+}
+
+#zen-summary::after {
+  border-bottom: 1px solid #666;
+  border-right: 1px solid #666;
+  bottom: -20px;
+  right: -50px;
+}
+
+#zen-summary:hover::before {
+  top: -10px;
+  left: -10px;
+}
+
+#zen-summary:hover::after {
+  bottom: -10px;
+  right: -10px;
+}
+
+/* zen-preamble區塊 */
+#zen-preamble {
+  margin-top: 5rem;
+  text-align: center;
+  position: relative;
+}
+
+#zen-preamble h3 {
+  position: relative;
+  transition: 0.1s;
+}
+
+#zen-preamble h3:hover {
+  cursor: pointer;
+}
+
+#zen-preamble h3.click {
+  font-size: 0.8rem;
+}
+
+#zen-preamble h3::after {
+  font-size: 2rem;
+  content: "▼";
+  display: block;
+  position: absolute;
+  transition: 0.5s;
+  top: 20px;
+  right: 50%;
+  color: #666;
+}
+
+#zen-preamble h3.click::after {
+  top: 500px;
+}
+
+#zen-preamble h3:hover::after {
+  transform-origin: center center;
+  transform: rotateZ(360deg);
+}
+
+#zen-preamble h3::before {
+  font-size: 2rem;
+  content: "543210";
+  display: block;
+  position: absolute;
+  transition: 0.5s;
+  top: -30px;
+  right: 50%;
+  color: #666;
+  overflow: hidden;
+  width: 1rem;
+  height: 2rem;
+  text-indent: 0rem;
+}
+
+#zen-preamble h3.click::before {
+  animation: countdown 5s;
+}
+
+@keyframes countdown {
+  0% {
+    text-indent: 0rem;
+  }
+  20% {
+    text-indent: -1.1rem;
+  }
+  40% {
+    text-indent: -2.3rem;
+  }
+  60% {
+    text-indent: -3.4rem;
+  }
+  80% {
+    text-indent: -4.4rem;
+  }
+  100% {
+    text-indent: -5.6rem;
+  }
+}
+
+#zen-preamble p {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#zen-preamble p.click {
+  opacity: 1;
+}
+
+/* zen-supporting */
+#zen-supporting {
+  height: auto;
+  /* margin: 5rem; */
+  padding: 5rem;
+  background: linear-gradient(to right bottom, rgb(0, 45, 80), rgb(0, 10, 40) 40%);
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#zen-supporting h3,#zen-supporting p{
+  transition: 1s;
+  overflow: hidden;
+  color: transparent;
+  border: 1px solid #fff;
+  margin: .5rem;
+}
+
+#zen-supporting h3:hover,#zen-supporting p:hover{
+  /* font-size: 1.5rem; */
+  transform: scale(1.05);
+  color: #fff;
+  box-shadow: 0 0 10px #fff;
+  border: 1px solid #666;
+}
+
+#zen-explanation {
+  /* display: block; */
+  width: 100%;
+  display: flex;
+}
+
+#zen-explanation h3 {
+  text-align: center;
+  width: 30%;
+  height: 200px;
+  background: url(../images/01.jpg) no-repeat center/cover;
+}
+
+#zen-explanation p:nth-child(even) {
+  width: 30%;
+  background: url(../images/02.jpg) no-repeat center/cover;
+}
+
+#zen-explanation p:nth-child(odd) {
+  width: 30%;
+  background: url(../images/03.jpg) no-repeat center/cover;
+}
+
+#zen-participation {
+  width: 100%;
+  display: flex;
+}
+
+#zen-participation h3 {
+  text-align: center;
+  width: 30%;
+  height: 300px;
+  background: url(../images/04.jpg) no-repeat center/cover;
+}
+
+#zen-participation p:nth-child(2) {
+  width: 30%;
+  height: 300px;
+
+  background: url(../images/05.jpg) no-repeat top/cover;
+}
+
+#zen-participation p:nth-child(3) {
+  width: 30%;
+  background: url(../images/06.jpg) no-repeat center/cover;
+}
+
+#zen-participation p:nth-child(4) {
+  width: 30%;
+  background: url(../images/07.jpg) no-repeat center/cover;
+}
+
+#zen-benefits {
+  width: 100%;
+  display: flex;
+}
+
+#zen-benefits h3 {
+  width: 15%;
+  height: 300px;
+  text-align: center;
+  background: url(../images/08.jpg) no-repeat center/cover;
+
+}
+
+#zen-benefits p {
+  width: 80%;
+  background: url(../images/09.jpg) no-repeat top/cover;
+  height: 300px;
+}
+
+#zen-requirements {
+  width: 100%;
+  display: flex;
+}
+
+#zen-requirements h3 {
+  width: 30%;
+  height: 200px;
+  text-align: center;
+  background: url(../images/11.jpg) no-repeat top/cover;
+
+}
+
+#zen-requirements p:nth-child(2) {
+  width: 30%;
+  background: url(../images/10.jpg) no-repeat top/cover;
+}
+
+#zen-requirements p:nth-child(3) {
+  width: 30%;
+  background: url(../images/12.jpg) no-repeat top/cover;
+}
+
+#zen-requirements p:nth-child(4) {
+  width: 30%;
+  height: 300px;
+  background: url(../images/13.jpg) no-repeat top/cover;
+}
+
+#zen-requirements p:nth-child(5) {
+  width: 30%;
+  height: 200px;
+  background: url(../images/14.jpg) no-repeat top/cover;
+
+}
+
+#zen-requirements p:nth-child(6) {
+  width: 30%;
+  height: 300px;
+  background: url(../images/15.jpg) no-repeat center/cover;
+
+}
+
+#footer {
+  position: fixed;
+  right: 0;
+  top: 30%;
+  width: 3%;
+  height: 50vh;
+  /* background-color: #666; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#footer a:nth-child(1) {
+  width: 100%;
+  text-indent: -100%;
+  overflow: hidden;
+  background: url(../images/html.svg) no-repeat;
+}
+
+#footer a:nth-child(2) {
+  width: 100%;
+  text-indent: -100%;
+  overflow: hidden;
+  background: url(../images/css.svg) no-repeat;
+}
+
+#footer a:nth-child(3) {
+  width: 100%;
+  text-indent: -100%;
+  overflow: hidden;
+  background: url(../images/cc.svg) no-repeat;
+}
+
+#footer a:nth-child(4) {
+  width: 100%;
+  text-indent: -100%;
+  overflow: hidden;
+  background: url(../images/accessible.svg) no-repeat;
+}
+
+#footer a:nth-child(5) {
+  width: 100%;
+  text-indent: -100%;
+  overflow: hidden;
+  background: url(../images/github.svg) no-repeat;
+}
+
+#sidebar {
+  /* position: sticky; */
+  width: 100%;
+  background: linear-gradient(to left top, rgb(0, 45, 80), rgb(0, 10, 40) 50%);
+  height: auto;
+}
+
+#wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+#design-selection,
+#design-archives,
+#zen-resources {
+  width: 30%;
+}
+
