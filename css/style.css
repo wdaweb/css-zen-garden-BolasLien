@@ -10,6 +10,7 @@
 /* globle style */
 body {
   background: linear-gradient(to right top, rgb(0, 45, 80), rgb(0, 10, 40) 30%);
+  /* background-image: ; */
   background-attachment: fixed;
   overflow-x: hidden;
 }
@@ -194,7 +195,6 @@ body {
 /* zen-supporting */
 #zen-supporting {
   height: auto;
-  /* margin: 5rem; */
   padding: 5rem;
   background: linear-gradient(to right bottom, rgb(0, 45, 80), rgb(0, 10, 40) 40%);
   background-attachment: fixed;
@@ -213,7 +213,6 @@ body {
 }
 
 #zen-supporting h3:hover,#zen-supporting p:hover{
-  /* font-size: 1.5rem; */
   transform: scale(1.05);
   color: #fff;
   box-shadow: 0 0 10px #fff;
@@ -221,7 +220,6 @@ body {
 }
 
 #zen-explanation {
-  /* display: block; */
   width: 100%;
   display: flex;
 }
@@ -338,45 +336,35 @@ body {
   position: fixed;
   right: 0;
   top: 30%;
-  width: 3%;
+  width: 3rem;
   height: 50vh;
-  /* background-color: #666; */
   display: flex;
   flex-wrap: wrap;
 }
 
-#footer a:nth-child(1) {
+#footer a{
   width: 100%;
   text-indent: -100%;
   overflow: hidden;
+}
+
+#footer a:nth-child(1) {
   background: url(../images/html.svg) no-repeat;
 }
 
 #footer a:nth-child(2) {
-  width: 100%;
-  text-indent: -100%;
-  overflow: hidden;
   background: url(../images/css.svg) no-repeat;
 }
 
 #footer a:nth-child(3) {
-  width: 100%;
-  text-indent: -100%;
-  overflow: hidden;
   background: url(../images/cc.svg) no-repeat;
 }
 
 #footer a:nth-child(4) {
-  width: 100%;
-  text-indent: -100%;
-  overflow: hidden;
   background: url(../images/accessible.svg) no-repeat;
 }
 
 #footer a:nth-child(5) {
-  width: 100%;
-  text-indent: -100%;
-  overflow: hidden;
   background: url(../images/github.svg) no-repeat;
 }
 
