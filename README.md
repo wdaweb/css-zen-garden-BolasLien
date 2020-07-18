@@ -1,11 +1,11 @@
 # CSS Zen Garden 切版練習
+由此進入 https://bolaslien.github.io/css-zen-garden-BolasLien/
 
 ## 規則
 * 為 CSS Zen Garden 設計一個主題風格頁面。
 * 版型不限制尺寸大小，保留 index.html 裡面的原始結構、內容。
 
 ## 網頁主題：NASA風格
-由此進入 https://bolaslien.github.io/css-zen-garden-BolasLien/
 
 ## 引用套件
 * JQuery
